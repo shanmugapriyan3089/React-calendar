@@ -11,7 +11,7 @@ const Calendar = () => {
 
   'week', 'month', 'year';
 
-  const allEvents = [
+  const allEvents1 = [
     {
       id: 1,
       title: 'Team Meeting',
@@ -124,19 +124,19 @@ const Calendar = () => {
 
   const getFilteredEvents = () => {
     if (viewMode === 'today') {
-      return allEvents.filter(
+      return allEvents1.filter(
         (event) => event.date === currentDate.toISOString().split('T')[0] // Compare only the date part
       );
     }
 
     if (viewMode === 'week') {
-      return allEvents.filter((event) =>
+      return allEvents1.filter((event) =>
         weekDates.some((weekDate) => weekDate.fullDate === event.date)
       );
     }
 
     if (viewMode === 'month') {
-      return allEvents.filter(
+      return allEvents1.filter(
         (event) =>
           new Date(event.date).getMonth() === currentDate.getMonth() &&
           new Date(event.date).getFullYear() === currentDate.getFullYear()
@@ -144,7 +144,7 @@ const Calendar = () => {
     }
 
     if (viewMode === 'year') {
-      return allEvents.filter(
+      return allEvents1.filter(
         (event) =>
           new Date(event.date).getFullYear() === currentDate.getFullYear()
       );
@@ -394,7 +394,7 @@ const Calendar = () => {
           {monthsShort.map((month, i) => (
             <div key={i} className="month-cell">
               <h4>{month}</h4>
-              {allEvents
+              {allEvents1
                 .filter(
                   (event) =>
                     new Date(event.date).getMonth() === i &&
