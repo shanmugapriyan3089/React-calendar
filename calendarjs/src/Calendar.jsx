@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import  { useState } from 'react';
 // import { toast, ToastContainer } from 'react-toastify';
 import './Calendar.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,8 +8,7 @@ const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [viewMode, setViewMode] = useState('week');
   const [toastEvents, setToastEvents] = useState([]);
-  const [popupEvents, setPopupEvents] = useState([]);
-  const [isPopupVisible, setPopupVisible] = useState(false);
+
   'week', 'month', 'year';
 
   const allEvents = [
@@ -193,7 +192,7 @@ const Calendar = () => {
   return (
     <div className="calendar-container">
       <header className="calendar-header">
-        <h2>Your Todo's</h2>
+        <h2>Your Todos</h2>
         <div className="dropdowns">
           <select
             value={currentDate.getMonth()}
